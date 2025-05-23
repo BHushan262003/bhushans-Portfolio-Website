@@ -100,7 +100,7 @@ export const About = () => {
                 <div className="flex flex-wrap gap-6 mt-8 pt-6 border-t border-gray-200">
                   <div className="flex items-center text-gray-600 bg-gray-50 rounded-lg px-4 py-2">
                     <MapPin size={16} className="mr-2 text-primary-600" />
-                    <span className="font-medium">Maharashtra, India</span>
+                    <span className="font-medium">Pune, India</span>
                   </div>
                   <div className="flex items-center text-gray-600 bg-green-50 rounded-lg px-4 py-2">
                     <Calendar size={16} className="mr-2 text-green-600" />

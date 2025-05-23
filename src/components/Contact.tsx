@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -60,7 +59,7 @@ export const Contact = () => {
     {
       icon: <MapPin className="text-red-500" size={24} />,
       label: "Location",
-      value: "Maharashtra, India",
+      value: "Pune, India",
       link: null,
       color: "red",
       description: "Available for remote work"
