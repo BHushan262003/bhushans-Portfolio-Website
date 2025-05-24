@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -22,10 +23,10 @@ export const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Replace these with your actual EmailJS credentials
-      const serviceId = 'YOUR_SERVICE_ID';
-      const templateId = 'YOUR_TEMPLATE_ID';
-      const publicKey = 'YOUR_PUBLIC_KEY';
+      // Your actual EmailJS credentials
+      const serviceId = 'service_mzx1q8q';
+      const templateId = 'template_lgormwk';
+      const publicKey = 'Zr2YbVVdyQT31J32t';
 
       const templateParams = {
         from_name: formData.name,
@@ -337,11 +338,11 @@ export const Contact = () => {
                   </p>
                 </div>
 
-                {/* Setup Instructions */}
+                {/* EmailJS Status */}
                 <div className="mt-6 p-4 bg-blue-50/80 backdrop-blur-sm rounded-lg border border-blue-200">
                   <p className="text-sm text-blue-700 text-center">
                     <MessageCircle className="inline mr-1" size={16} />
-                    To complete setup: Replace the EmailJS credentials in the code with your actual values
+                    EmailJS integration active - Messages will be sent to your Gmail
                   </p>
                 </div>
               </CardContent>
