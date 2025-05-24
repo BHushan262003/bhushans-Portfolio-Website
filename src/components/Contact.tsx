@@ -3,8 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Send, ExternalLink, MessageCircle, Clock, CheckCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, ExternalLink, MessageCircle, Clock, CheckCircle, Loader2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -13,15 +14,45 @@ export const Contact = () => {
     subject: '',
     message: ''
   });
+  const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for your message. I'll get back to you soon!",
-    });
-    setFormData({ name: '', email: '', subject: '', message: '' });
+    setIsLoading(true);
+
+    try {
+      // Replace these with your actual EmailJS credentials
+      const serviceId = 'YOUR_SERVICE_ID';
+      const templateId = 'YOUR_TEMPLATE_ID';
+      const publicKey = 'YOUR_PUBLIC_KEY';
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_name: 'Bhushan Aher',
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      
+      toast({
+        title: "Message Sent Successfully!",
+        description: "Thank you for your message. I'll get back to you within 24 hours!",
+      });
+      
+      setFormData({ name: '', email: '', subject: '', message: '' });
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        title: "Failed to Send Message",
+        description: "There was an error sending your message. Please try again or contact me directly via email.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -199,7 +230,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            {/* Contact Form */}
+            {/* Contact Form with EmailJS Integration */}
             <Card className="bg-white/70 backdrop-blur-sm border-white/20 hover:shadow-2xl transition-shadow duration-300">
               <CardHeader className="bg-gradient-to-r from-primary-50/80 to-blue-50/80 backdrop-blur-sm border-b border-white/20">
                 <CardTitle className="text-xl font-bold text-gray-900 flex items-center">
@@ -223,6 +254,7 @@ export const Contact = () => {
                         required
                         value={formData.name}
                         onChange={handleChange}
+                        disabled={isLoading}
                         className="border-gray-200 focus:border-primary-500 focus:ring-primary-500 bg-white/80 backdrop-blur-sm"
                         placeholder="John Doe"
                       />
@@ -238,6 +270,7 @@ export const Contact = () => {
                         required
                         value={formData.email}
                         onChange={handleChange}
+                        disabled={isLoading}
                         className="border-gray-200 focus:border-primary-500 focus:ring-primary-500 bg-white/80 backdrop-blur-sm"
                         placeholder="john@example.com"
                       />
@@ -255,6 +288,7 @@ export const Contact = () => {
                       required
                       value={formData.subject}
                       onChange={handleChange}
+                      disabled={isLoading}
                       className="border-gray-200 focus:border-primary-500 focus:ring-primary-500 bg-white/80 backdrop-blur-sm"
                       placeholder="Project Discussion / Job Opportunity"
                     />
@@ -270,6 +304,7 @@ export const Contact = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
+                      disabled={isLoading}
                       rows={5}
                       className="border-gray-200 focus:border-primary-500 focus:ring-primary-500 bg-white/80 backdrop-blur-sm resize-none"
                       placeholder="Tell me about your project, opportunity, or just say hello..."
@@ -278,10 +313,20 @@ export const Contact = () => {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 hover:from-primary-700 hover:via-blue-700 hover:to-purple-700 text-white py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    disabled={isLoading}
+                    className="w-full bg-gradient-to-r from-primary-600 via-blue-600 to-purple-600 hover:from-primary-700 hover:via-blue-700 hover:to-purple-700 text-white py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                   >
-                    <Send className="mr-2" size={20} />
-                    Send Message
+                    {isLoading ? (
+                      <>
+                        <Loader2 className="mr-2 animate-spin" size={20} />
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="mr-2" size={20} />
+                        Send Message
+                      </>
+                    )}
                   </Button>
                 </form>
 
@@ -289,6 +334,14 @@ export const Contact = () => {
                   <p className="text-sm text-green-700 text-center">
                     <CheckCircle className="inline mr-1" size={16} />
                     I typically respond within 24 hours
+                  </p>
+                </div>
+
+                {/* Setup Instructions */}
+                <div className="mt-6 p-4 bg-blue-50/80 backdrop-blur-sm rounded-lg border border-blue-200">
+                  <p className="text-sm text-blue-700 text-center">
+                    <MessageCircle className="inline mr-1" size={16} />
+                    To complete setup: Replace the EmailJS credentials in the code with your actual values
                   </p>
                 </div>
               </CardContent>
