@@ -11,7 +11,8 @@ export const About = () => {
       period: "2021 – 2024",
       icon: <GraduationCap className="text-primary-600" size={20} />,
       grade: "First Class",
-      color: "primary"
+      color: "primary",
+      location: "Jalgaon, Maharashtra"
     },
     {
       degree: "HSC (Commerce)",
@@ -19,7 +20,8 @@ export const About = () => {
       period: "2020 – 2021",
       icon: <GraduationCap className="text-secondary-500" size={20} />,
       grade: "Distinction",
-      color: "secondary"
+      color: "secondary",
+      location: "Jalgaon, Maharashtra"
     },
     {
       degree: "SSC",
@@ -27,7 +29,8 @@ export const About = () => {
       period: "2018 – 2019",
       icon: <GraduationCap className="text-teal-500" size={20} />,
       grade: "First Class",
-      color: "teal"
+      color: "teal",
+      location: "Jalgaon, Maharashtra"
     }
   ];
 
@@ -82,8 +85,8 @@ export const About = () => {
                 </h3>
                 <div className="space-y-4 text-gray-700 leading-relaxed">
                   <p>
-                    Computer Applications graduate with strong foundational knowledge of software development, 
-                    Object-Oriented Programming, and full-stack web development.
+                    Computer Applications graduate from Jalgaon, Maharashtra with strong foundational knowledge of software development, 
+                    Object-Oriented Programming, and web development.
                   </p>
                   <p>
                     Experienced in <span className="font-semibold text-primary-600">Java, PHP, HTML, CSS, JavaScript, and MySQL</span> through 
@@ -91,7 +94,7 @@ export const About = () => {
                     and collaborating in team environments.
                   </p>
                   <p>
-                    I demonstrate eagerness to learn, adapt, and grow in professional software engineering roles, 
+                    Currently seeking opportunities in Pune, demonstrating eagerness to learn, adapt, and grow in professional software engineering roles, 
                     always staying current with the latest technologies and best practices.
                   </p>
                 </div>
@@ -100,7 +103,7 @@ export const About = () => {
                 <div className="flex flex-wrap gap-6 mt-8 pt-6 border-t border-gray-200">
                   <div className="flex items-center text-gray-600 bg-gray-50 rounded-lg px-4 py-2">
                     <MapPin size={16} className="mr-2 text-primary-600" />
-                    <span className="font-medium">Pune, India</span>
+                    <span className="font-medium">Seeking opportunities in Pune</span>
                   </div>
                   <div className="flex items-center text-gray-600 bg-green-50 rounded-lg px-4 py-2">
                     <Calendar size={16} className="mr-2 text-green-600" />
@@ -157,6 +160,7 @@ export const About = () => {
                                 <div>
                                   <h4 className="font-bold text-gray-900 text-lg">{item.degree}</h4>
                                   <p className="text-primary-600 font-semibold">{item.institution}</p>
+                                  <p className="text-sm text-gray-500">{item.location}</p>
                                 </div>
                               </div>
                               <div className="text-right">

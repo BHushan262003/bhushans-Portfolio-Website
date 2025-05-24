@@ -11,9 +11,9 @@ export const Experience = () => {
       company: "Intern Certify",
       period: "Sep 2024 - Mar 2025",
       location: "Remote",
-      type: "Current Position",
+      type: "Completed",
       icon: <Code className="text-primary-600" size={20} />,
-      description: "Working on Java-based backend development for web applications and applying OOP and data structures in real-world scenarios.",
+      description: "Worked on Java-based backend development for web applications and applied OOP and data structures in real-world scenarios.",
       achievements: [
         "Developed Java backend services for web applications",
         "Applied Object-Oriented Programming principles",
@@ -47,10 +47,10 @@ export const Experience = () => {
   const achievements = [
     {
       title: "AI Awareness Field Project",
-      description: "Organized seminars and created learning materials to promote AI awareness. Educated participants on AI basics and its industry impact.",
+      description: "Conducted a fieldwork project focusing on increasing awareness about Artificial Intelligence during the final year of BCA. Organized seminars and workshops to educate participants on the basics of AI, its applications, and its potential impact across various industries. Developed materials and resources to simplify AI concepts for diverse audiences.",
       icon: "🎓",
       impact: "Reached 100+ participants",
-      category: "Community Impact"
+      category: "Academic Project"
     }
   ];
 
@@ -58,7 +58,7 @@ export const Experience = () => {
     {
       icon: <TrendingUp className="text-green-500" size={20} />,
       label: "Months of Experience",
-      value: "12+",
+      value: "12",
       color: "green"
     },
     {
@@ -70,7 +70,7 @@ export const Experience = () => {
     {
       icon: <Award className="text-purple-500" size={20} />,
       label: "Projects Completed",
-      value: "8+",
+      value: "1",
       color: "purple"
     }
   ];
@@ -145,7 +145,7 @@ export const Experience = () => {
                               <p className="text-lg font-semibold text-primary-600">{exp.company}</p>
                             </div>
                           </div>
-                          <Badge variant="outline" className={`${exp.type === 'Current Position' ? 'border-green-500 text-green-700 bg-green-50' : 'border-blue-500 text-blue-700 bg-blue-50'}`}>
+                          <Badge variant="outline" className="border-blue-500 text-blue-700 bg-blue-50">
                             {exp.type}
                           </Badge>
                         </div>

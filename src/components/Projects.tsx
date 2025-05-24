@@ -34,41 +34,26 @@ export const Projects = () => {
 
   const projectStats = [
     { 
-      icon: <Globe size={20} />, 
-      label: "Web Applications", 
-      value: "5+",
+      icon: <Monitor size={20} />, 
+      label: "Project Completed", 
+      value: "1",
       color: "blue",
-      description: "Full-stack projects built"
+      description: "School Management System"
     },
     { 
       icon: <Database size={20} />, 
-      label: "Database Projects", 
-      value: "3+",
+      label: "Database Integration", 
+      value: "MySQL",
       color: "green",
-      description: "Data-driven solutions"
+      description: "Relational database"
     },
     { 
-      icon: <Users size={20} />, 
-      label: "Team Projects", 
-      value: "2+",
+      icon: <Code size={20} />, 
+      label: "Technologies Used", 
+      value: "5",
       color: "purple",
-      description: "Collaborative developments"
+      description: "Modern web technologies"
     },
-  ];
-
-  const upcomingProjects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Building a modern e-commerce solution with React and Node.js",
-      technologies: ["React", "Node.js", "MongoDB"],
-      status: "Planning"
-    },
-    {
-      title: "Task Management App",
-      description: "A productivity app with real-time collaboration features",
-      technologies: ["Vue.js", "Firebase", "PWA"],
-      status: "In Progress"
-    }
   ];
 
   return (
@@ -87,11 +72,11 @@ export const Projects = () => {
               <span className="text-purple-700 font-medium">My creative work</span>
             </div>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-              Featured Projects
+              Featured Project
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-primary-600 via-purple-500 to-teal-500 mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Showcasing my technical skills through real-world projects that solve practical problems and demonstrate my development capabilities.
+              Showcasing my technical skills through a real-world project that solves practical problems and demonstrates my development capabilities.
             </p>
           </div>
 
@@ -233,46 +218,19 @@ export const Projects = () => {
             ))}
           </div>
 
-          {/* Upcoming Projects */}
-          <div className="mb-12">
-            <h3 className="font-heading text-2xl font-bold text-gray-900 mb-8 text-center">Upcoming Projects</h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              {upcomingProjects.map((project, index) => (
-                <Card key={index} className="bg-white/70 backdrop-blur-sm border-white/20 hover:shadow-lg transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-center justify-between mb-3">
-                      <h4 className="font-semibold text-gray-900">{project.title}</h4>
-                      <Badge variant="outline" className={project.status === 'Planning' ? 'border-yellow-500 text-yellow-700 bg-yellow-50' : 'border-blue-500 text-blue-700 bg-blue-50'}>
-                        {project.status}
-                      </Badge>
-                    </div>
-                    <p className="text-gray-700 text-sm mb-4">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, i) => (
-                        <Badge key={i} variant="secondary" className="text-xs bg-gray-100 text-gray-600">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* More Projects CTA */}
+          {/* CTA */}
           <div className="text-center">
             <div className="bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/20 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Interested in seeing more?</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Ready to start working together?</h3>
               <p className="text-gray-600 mb-6">
-                I have more projects and experiments in my repository. Let's discuss how we can work together!
+                I'm currently seeking new opportunities in Pune and would love to discuss how we can work together on exciting projects!
               </p>
               <div className="flex gap-4 justify-center">
                 <Button className="bg-gradient-to-r from-primary-600 to-purple-600 hover:from-primary-700 hover:to-purple-700 text-white">
-                  View All Projects
+                  Contact Me
                 </Button>
                 <Button variant="outline" className="border-primary-600 text-primary-600 hover:bg-primary-50">
-                  Contact Me
+                  Download Resume
                 </Button>
               </div>
             </div>
