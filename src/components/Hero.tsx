@@ -31,8 +31,12 @@ export const Hero = () => {
             {/* Profile Image with Glass Effect */}
             <div className="relative w-40 h-40 mx-auto mb-8">
               <div className="absolute inset-0 bg-gradient-to-br from-primary-500 via-teal-500 to-secondary-500 rounded-full p-1 shadow-2xl">
-                <div className="w-full h-full bg-gradient-to-br from-primary-600 to-teal-600 rounded-full flex items-center justify-center text-white text-5xl font-bold backdrop-blur-sm">
-                  BA
+                <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                  <img 
+                    src="https://postimage.me/images/2025/05/24/Bhushan-IMG.jpg" 
+                    alt="Bhushan Aher" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
               
@@ -115,15 +119,15 @@ export const Hero = () => {
             {/* Enhanced Experience Badge */}
             <div className="inline-flex items-center bg-white/90 backdrop-blur-md rounded-2xl p-6 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300">
               <div className="text-center pr-6">
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-teal-600 bg-clip-text text-transparent">2+</div>
-                <div className="text-sm text-gray-600 font-medium">Years Experience</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-teal-600 bg-clip-text text-transparent">1+</div>
+                <div className="text-sm text-gray-600 font-medium">Year Experience</div>
               </div>
               
               <div className="w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
               
               <div className="text-center pl-6">
                 <div className="text-lg font-bold text-gray-800">BCA Graduate</div>
-                <div className="text-sm text-gray-600 font-medium">Full-Stack Developer</div>
+                <div className="text-sm text-gray-600 font-medium">Java Developer</div>
               </div>
             </div>
           </div>
