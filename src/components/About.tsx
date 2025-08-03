@@ -1,9 +1,26 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { GraduationCap, Calendar, MapPin, Award, Target, Lightbulb, Code, Database, Cpu, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { GraduationCap, Calendar, MapPin, Award, Target, Lightbulb, Code, Database, Cpu, Zap, Download } from 'lucide-react';
+import { LinkedInImporter } from './LinkedInImporter';
 
 export const About = () => {
+  const [profileData, setProfileData] = useState({
+    name: '',
+    title: '',
+    location: '',
+    about: '',
+    experience: [] as Array<{ title: string; company: string; }>,
+    skills: [] as string[]
+  });
+
+  const handleLinkedInImport = (data: any) => {
+    setProfileData(data);
+    // Here you could also update other components with the imported data
+  };
+
   const education = [
     {
       degree: "Bachelor of Computer Applications (BCA)",
@@ -98,9 +115,25 @@ export const About = () => {
               <div className="w-2 h-2 bg-blue-400 rounded-full mr-3 animate-pulse"></div>
               <span className="text-blue-300 font-medium">Get to know me better</span>
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4">
-              About Me
-            </h2>
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">
+                About Me
+              </h2>
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="sm" className="bg-blue-500/20 border-blue-400/30 text-blue-300 hover:bg-blue-500/30">
+                    <Download size={16} className="mr-2" />
+                    Import from LinkedIn
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto bg-gray-900/95 border-gray-700">
+                  <DialogHeader>
+                    <DialogTitle className="text-white">Import LinkedIn Profile</DialogTitle>
+                  </DialogHeader>
+                  <LinkedInImporter onDataImported={handleLinkedInImport} />
+                </DialogContent>
+              </Dialog>
+            </div>
             <div className="w-24 h-1 bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 mx-auto rounded-full mb-6 animate-pulse"></div>
             <p className="text-lg text-gray-300 max-w-2xl mx-auto">
               Exploring the digital frontier with passion and innovation.
@@ -118,20 +151,50 @@ export const About = () => {
                   My Digital Journey
                 </h3>
                 <div className="space-y-4 text-gray-300 leading-relaxed">
-                  <p>
-                    Computer Applications graduate from Jalgaon, Maharashtra with strong foundational knowledge of software development, 
-                    Object-Oriented Programming, and web development.
-                  </p>
-                  <p>
-                    Experienced in <span className="font-semibold text-blue-300">Java, PHP, HTML, CSS, JavaScript, and MySQL</span> through 
-                    internships and academic projects. Passionate about writing clean code, solving real-world problems, 
-                    and collaborating in team environments.
-                  </p>
-                  <p>
-                    Currently seeking opportunities in Pune, demonstrating eagerness to learn, adapt, and grow in professional software engineering roles, 
-                    always staying current with the latest technologies and best practices.
-                  </p>
+                  {profileData.about ? (
+                    <p>{profileData.about}</p>
+                  ) : (
+                    <>
+                      <p>
+                        Computer Applications graduate from Jalgaon, Maharashtra with strong foundational knowledge of software development, 
+                        Object-Oriented Programming, and web development.
+                      </p>
+                      <p>
+                        Experienced in <span className="font-semibold text-blue-300">Java, PHP, HTML, CSS, JavaScript, and MySQL</span> through 
+                        internships and academic projects. Passionate about writing clean code, solving real-world problems, 
+                        and collaborating in team environments.
+                      </p>
+                      <p>
+                        Currently seeking opportunities in Pune, demonstrating eagerness to learn, adapt, and grow in professional software engineering roles, 
+                        always staying current with the latest technologies and best practices.
+                      </p>
+                    </>
+                  )}
                 </div>
+
+                {/* Display imported LinkedIn data */}
+                {profileData.name && (
+                  <div className="mt-6 p-4 bg-blue-500/10 border border-blue-400/30 rounded-lg">
+                    <h4 className="text-blue-300 font-semibold mb-2">Imported LinkedIn Profile:</h4>
+                    <div className="space-y-2 text-sm">
+                      <p><span className="font-medium">Name:</span> {profileData.name}</p>
+                      {profileData.title && <p><span className="font-medium">Title:</span> {profileData.title}</p>}
+                      {profileData.location && <p><span className="font-medium">Location:</span> {profileData.location}</p>}
+                      {profileData.skills.length > 0 && (
+                        <div>
+                          <span className="font-medium">Skills:</span>
+                          <div className="flex flex-wrap gap-1 mt-1">
+                            {profileData.skills.slice(0, 5).map((skill, index) => (
+                              <span key={index} className="bg-blue-500/20 text-blue-300 px-2 py-1 rounded text-xs">
+                                {skill}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
 
                 {/* Contact Info */}
                 <div className="flex flex-wrap gap-6 mt-8 pt-6 border-t border-white/10">
