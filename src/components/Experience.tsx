@@ -15,10 +15,8 @@ export const Experience = () => {
       icon: <Code className="text-blue-600" size={20} />,
       description: "Worked on Java-based backend development for web applications and applied OOP and data structures in real-world scenarios.",
       achievements: [
-        "Developed Java backend services for web applications",
-        "Applied Object-Oriented Programming principles",
-        "Implemented data structures for optimal performance",
-        "Collaborated with team on software engineering practices"
+        "Gained exposure to Java-based backend development for live web applications during internship.",
+        "Practiced OOP and data structures to understand business logic during internship."
       ],
       technologies: ["Java", "OOP", "Data Structures", "Backend Development"],
       gradient: "from-blue-600 to-blue-800",
@@ -33,10 +31,8 @@ export const Experience = () => {
       icon: <Globe className="text-green-600" size={20} />,
       description: "Gained comprehensive training and hands-on experience in full-stack web development fundamentals and reusable component creation.",
       achievements: [
-        "Trained in HTML, CSS, JavaScript, PHP, and MySQL",
-        "Built responsive web applications",
-        "Developed reusable UI components",
-        "Gained full-stack development experience"
+        "Learned full-stack fundamentals using HTML, CSS, JavaScript, PHP, and MySQL during internship training.",
+        "Studied reusable component design and front-end performance concepts."
       ],
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"],
       gradient: "from-green-600 to-green-800",
