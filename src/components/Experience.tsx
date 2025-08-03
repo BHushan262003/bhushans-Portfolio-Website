@@ -76,14 +76,14 @@ export const Experience = () => {
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-blue-100 rounded-full px-6 py-3 mb-6">
-              <Briefcase className="text-blue-600 mr-2" size={20} />
-              <span className="text-blue-700 font-medium">Professional Journey</span>
+            <div className="inline-flex items-center bg-blue-50 rounded-full px-6 py-3 mb-6 border border-blue-100">
+              <Briefcase className="text-primary mr-2" size={20} />
+              <span className="text-primary font-medium">Professional Journey</span>
             </div>
             <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Experience & Achievements
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full mb-6"></div>
+            <div className="w-24 h-1 bg-primary mx-auto rounded-full mb-6"></div>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               My professional development through internships and project experiences that have shaped my career journey.
             </p>
