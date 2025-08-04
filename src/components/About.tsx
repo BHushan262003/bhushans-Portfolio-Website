@@ -23,6 +23,15 @@ export const About = () => {
 
   const education = [
     {
+      degree: "Bachelor of Computer Applications (BCA)",
+      institution: "North Maharashtra University",
+      period: "2021 – 2024",
+      icon: <GraduationCap className="text-blue-400" size={20} />,
+      grade: "First Class",
+      color: "blue",
+      location: "Jalgaon, Maharashtra"
+    },
+    {
       degree: "HSC (Commerce)",
       institution: "Adv. S.A. Baheti College",
       period: "2020 – 2021",
