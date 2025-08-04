@@ -23,10 +23,10 @@ export const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           
           {/* Profile Image */}
-          <div className="relative w-32 h-32 mx-auto mb-8 animate-fade-in">
+          <div className="relative w-40 h-40 mx-auto mb-8 animate-fade-in">
             <div className="w-full h-full rounded-full overflow-hidden shadow-large border-4 border-white">
               <img 
-                src="https://postimage.me/images/2025/05/24/Bhushan-IMG.jpg" 
+                src="https://i.postimg.cc/9Qt8Ym0Y/Whats-App-Image-2025-08-01-at-17-12-33-9179c172.jpg" 
                 alt="Bhushan Amrutkar" 
                 className="w-full h-full object-cover"
               />
