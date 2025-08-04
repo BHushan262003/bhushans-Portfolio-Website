@@ -25,7 +25,7 @@ export const About = () => {
     {
       degree: "Bachelor of Computer Applications (BCA)",
       institution: "North Maharashtra University",
-      period: "2021 – 2024",
+      period: "2021 – 2025",
       icon: <GraduationCap className="text-blue-400" size={20} />,
       grade: "First Class",
       color: "blue",
