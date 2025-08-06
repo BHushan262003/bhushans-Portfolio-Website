@@ -34,7 +34,7 @@ export const Projects = () => {
   const projectStats = [
     { 
       icon: <Monitor size={20} />, 
-      label: "Project Completed", 
+      label: "Projects Completed", 
       value: "1",
       color: "blue",
       description: "School Management System"
