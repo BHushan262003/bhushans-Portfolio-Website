@@ -39,7 +39,7 @@ export const Skills = () => {
     {
       icon: <Zap className="text-yellow-400" size={20} />,
       label: "Projects Completed",
-      value: "10+",
+      value: "1",
       color: "yellow"
     },
     {
